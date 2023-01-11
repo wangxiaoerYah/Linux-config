@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = mariadb
+[Action]
+Depends = mariadb
+When = PostTransaction
+Exec = /usr/bin/sh -c '/usr/bin/sed -i "s|After=network.target|After=wg-quick@wg0.service\nRequires=wg-quick@wg0.service|g" /usr/lib/systemd/system/mariadb.service && /usr/bin/sed -i "s|Restart=on-abort|Restart=always|g" /usr/lib/systemd/system/mariadb.service && /usr/bin/sed -i "s|RestartSec=5s|RestartSec=10s\nStartLimitInterval=60|g" /usr/lib/systemd/system/mariadb.service && /usr/bin/systemctl daemon-reload && /usr/bin/systemctl restart mariadb'

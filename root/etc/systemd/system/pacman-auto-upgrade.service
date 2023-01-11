@@ -1,0 +1,8 @@
+[Unit]
+Description=pacman-auto-upgrade
+
+[Service]
+ExecStart=/usr/bin/pacman -Syyu --noconfirm
+
+[Install]
+WantedBy=multi-user.target

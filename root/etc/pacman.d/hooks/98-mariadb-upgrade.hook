@@ -1,0 +1,8 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = mariadb
+[Action]
+Depends = mariadb
+When = PostTransaction
+Exec = /usr/bin/sh -c '/usr/bin/mariadb-upgrade -u root --force || /usr/bin/mariadb-check --all-databases -u root -c && /usr/bin/mariadb-check --all-databases -u root -a && /usr/bin/mariadb-check --all-databases -u root -r && /usr/bin/mariadb-check --all-databases -u root -o'

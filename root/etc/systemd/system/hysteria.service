@@ -1,0 +1,27 @@
+[Unit]
+Description=Hysteria Server
+Documentation=https://hysteria.network
+After=wg-quick@wg0.service
+Wants=wg-quick@wg0.service
+
+[Service]
+Type=simple
+EnvironmentFile=/opt/PX/conf/Hysteria/env.conf
+PermissionsStartOnly=true
+ExecStartPre=/usr/bin/iptables -t nat -A PREROUTING -i ${HYSTERIA_NET_INTERFACE} -p udp --dport ${HYSTERIA_DPORT} -j DNAT --to-destination ${HYSTERIA_TPORT}
+ExecStartPre=/usr/bin/ip6tables -t nat -A PREROUTING -i ${HYSTERIA_NET_INTERFACE} -p udp --dport ${HYSTERIA_DPORT} -j DNAT --to-destination ${HYSTERIA_TPORT}
+ExecStart=/opt/PX/core/hysteria -config /opt/PX/conf/Hysteria/server.json server
+ExecStopPost=/usr/bin/iptables -t nat -F PREROUTING
+ExecStopPost=/usr/bin/ip6tables -t nat -F PREROUTING
+WorkingDirectory=/opt/PX
+User=http
+Group=http
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
+NoNewPrivileges=true
+Restart=always
+RestartSec=10s
+StartLimitInterval=60
+
+[Install]
+WantedBy=multi-user.target

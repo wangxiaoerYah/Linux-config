@@ -1,0 +1,10 @@
+[Unit]
+Description=Update Xray
+
+[Timer]
+Unit=xray-update.service
+OnCalendar=*-*-* 23:59:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

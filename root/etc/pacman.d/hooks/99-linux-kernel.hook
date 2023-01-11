@@ -1,0 +1,10 @@
+# /etc/pacman.d/hooks/99-linux-kernel.hook
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux
+[Action]
+Depends = linux
+When = PostTransaction
+Exec = /usr/bin/shutdown -r 10 "10分钟后重启主机"

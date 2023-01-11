@@ -1,0 +1,8 @@
+[Unit]
+Description=Xray Update
+
+[Service]
+ExecStart=/usr/bin/bash -c 'wget -q -O- https://raw.githubusercontent.com/wangxiaoerYah/Linux-config/main/Start/Xray/scripts/update.sh | bash'
+
+[Install]
+WantedBy=multi-user.target
