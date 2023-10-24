@@ -1,0 +1,40 @@
+name: Gen Latest
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # on button click
+permissions: write-all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Gen MD5
+        shell: bash
+        run: |
+          python3 .github/gen-tool/md5.py
+
+      - name: Pull Latest
+        shell: bash
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor_email }}"
+          git add -A
+          git commit -m "$(date +'%Y-%m-%d_%H-%M-%S')"
+          git checkout --orphan latest_branch
+          rm -rf .github
+          git add -A
+          git commit -m "$(date +'%Y-%m-%d_%H-%M-%S')"
+          git branch -m latest
+          git push -f origin latest:latest

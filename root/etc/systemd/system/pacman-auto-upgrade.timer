@@ -1,0 +1,14 @@
+[Unit]
+Description=pacman-auto-upgrade
+Wants=network.target network-online.target nss-lookup.target
+After=network.target network-online.target nss-lookup.target
+
+[Timer]
+Unit=pacman-auto-upgrade.service
+OnCalendar=*-*-28 03:00:00
+AccuracySec=1m
+RandomizedDelaySec=1m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Update GeoDatabase
+Wants=network.target network-online.target nss-lookup.target
+After=network.target network-online.target nss-lookup.target
+
+[Timer]
+Unit=geodb-update.service
+OnCalendar=*-*-* 10:59:00
+AccuracySec=1m
+RandomizedDelaySec=1m
+Persistent=true
+
+[Install]
+WantedBy=timers.target
