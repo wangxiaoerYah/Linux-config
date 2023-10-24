@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = redis
+[Action]
+Depends = redis
+When = PostTransaction
+Exec = /usr/bin/sh -c '/usr/bin/sed -i "s|Group=redis|Group=redis\nRestart=always\nRestartSec=10s\nStartLimitInterval=60|g" /usr/lib/systemd/system/redis.service && /usr/bin/systemctl daemon-reload && /usr/bin/systemctl restart redis'

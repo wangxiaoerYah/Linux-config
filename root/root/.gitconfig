@@ -1,0 +1,5 @@
+[safe]
+        directory = /etc/nginx
+        directory = /opt/PX/conf
+        directory = /opt/oss/script
+        directory = /opt/My-Matrix

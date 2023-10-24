@@ -1,0 +1,10 @@
+[Unit]
+Description=pacman-auto-upgrade
+Wants=network.target network-online.target nss-lookup.target
+After=network.target network-online.target nss-lookup.target
+
+[Service]
+ExecStart=/usr/bin/pacman -Syyu --noconfirm
+
+[Install]
+WantedBy=multi-user.target

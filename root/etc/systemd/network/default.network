@@ -1,0 +1,9 @@
+[Match]
+Name=en*
+
+[Link]
+RequiredForOnline=yes
+MTUBytes=1500
+
+[Network]
+DHCP=yes
