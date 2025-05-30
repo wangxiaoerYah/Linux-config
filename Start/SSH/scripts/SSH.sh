@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##### PreFunction Start #####
-readonly BASE_URL="https://raw.githubusercontent.com/wangxiaoerYah/Linux-config/latest/"
+readonly BASE_URL="https://raw.githubusercontent.com/wangxiaoerYah/Linux-config/refs/heads/latest/"
 readonly LOG_ERROR="\e[31m%s\e[0m\n"
 readonly LOG_INFO="\e[32m%s\e[0m\n"
 readonly LOG_DEBUG="\e[33m%s\e[0m\n"
