@@ -97,6 +97,7 @@ function d_fn_podman() {
 		"containers.conf" \
 		"root/etc/containers/" \
 		"/etc/containers/containers.conf"
+
 	download_and_check \
 		"registries.conf" \
 		"root/etc/containers/" \
