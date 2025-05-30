@@ -19,7 +19,7 @@ function source_md5() {
 		curl -H 'Cache-Control: no-cache' -s -o ${target_path} ${download_url}
 		if [ $? -eq 0 ]; then
 			source ${target_path}
-			if [ ${?} -eq 0 ] && [ "$ALL_MD5_COMPLETE" = "true" ]; then
+			if [ $? -eq 0 ] && [ "$ALL_MD5_COMPLETE" = "true" ]; then
 				printf ${LOG_INFO} "The md5file was downloaded successfully."
 				main
 				rm -rf ${target_path}
@@ -67,7 +67,7 @@ function download_and_check() {
 	local attempt=1
 	while [ ${attempt} -le ${max_attempts} ]; do
 		curl -H 'Cache-Control: no-cache' -s -o ${tmp_path} ${download_url}
-		if [ ${?} -eq 0 ]; then
+		if [ $? -eq 0 ]; then
 			if [ -n ${md5_value} ]; then
 				printf ${LOG_DEBUG} "The MD5 value for ${filename} is ${md5_value}."
 				local calculated_md5=$(md5sum ${tmp_path} | awk '{print $1}')
