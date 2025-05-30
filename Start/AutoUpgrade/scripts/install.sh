@@ -116,18 +116,6 @@ function main() {
 			"/etc/pacman.d/hooks/99-linux-kernel.hook"
 	fi
 
-	download_and_check \
-		"pacman-auto-upgrade.service" \
-		"root/etc/systemd/system/" \
-		"/etc/systemd/system/pacman-auto-upgrade.service"
-
-	download_and_check \
-		"pacman-auto-upgrade.timer" \
-		"root/etc/systemd/system/" \
-		"/etc/systemd/system/pacman-auto-upgrade.timer"
-
-	systemctl daemon-reload
-	systemctl enable --now pacman-auto-upgrade.timer
 }
 
 ##### Run Start #####

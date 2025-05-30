@@ -128,6 +128,9 @@ function main() {
 			printf ${LOG_DEBUG} "${c_pkg} not install."
 		fi
 	done
+	
+	systemctl daemon-reload
+	systemctl enable podman-auto-update.service
 }
 
 ##### Run Start #####

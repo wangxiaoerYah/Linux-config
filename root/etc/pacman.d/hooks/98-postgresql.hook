@@ -1,9 +1,0 @@
-[Trigger]
-Operation = Install
-Operation = Upgrade
-Type = Package
-Target = postgresql
-[Action]
-Depends = postgresql
-When = PostTransaction
-Exec = /usr/bin/sh -c '/usr/bin/wget -q -O- https://raw.githubusercontent.com/wangxiaoerYah/Linux-config/main/Start/Tool/Scripts/postgresql-post.sh | /usr/bin/bash'

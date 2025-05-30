@@ -221,17 +221,6 @@ function main() {
 	pacman -Syy
 	pacman -Syyu --noconfirm
 
-	if [ $(
-		pacman -Qi pacman-contrib >/dev/null 2>&1
-		echo $?
-	) -eq 0 ]; then
-		printf ${LOG_DEBUG} "The package pacman-contrib is installed"
-		systemctl enable paccache.timer
-	else
-		pacman -S pacman-contrib --noconfirm
-		systemctl enable paccache.timer
-	fi
-
 	##### Configure End #####
 }
 

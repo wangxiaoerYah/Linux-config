@@ -1,8 +1,0 @@
-[Trigger]
-Operation = Upgrade
-Type = Package
-Target = postgresql
-[Action]
-Depends = postgresql
-When = PostTransaction
-Exec = /usr/bin/su -c '/usr/bin/wget -q -O- https://raw.githubusercontent.com/wangxiaoerYah/Linux-config/main/Start/Tool/Scripts/postgresql-upgrade-post-2.sh | /usr/bin/bash' postgres

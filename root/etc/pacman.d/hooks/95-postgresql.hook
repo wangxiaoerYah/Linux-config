@@ -1,8 +1,0 @@
-[Trigger]
-Operation = Upgrade
-Type = Package
-Target = postgresql
-[Action]
-Depends = postgresql
-When = PreTransaction
-Exec = /usr/bin/sh -c '/usr/bin/wget -q -O- https://raw.githubusercontent.com/wangxiaoerYah/Linux-config/main/Start/Tool/Scripts/postgresql-upgrade-pre.sh | /usr/bin/bash'
