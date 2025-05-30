@@ -125,13 +125,12 @@ function main() {
 		) -eq 0 ]; then
 			printf ${LOG_DEBUG} "${c_pkg} install. Download hook."
 			download_map ${c_pkg}
+			systemctl daemon-reload
+			systemctl enable podman-auto-update.service
 		else
 			printf ${LOG_DEBUG} "${c_pkg} not install."
 		fi
 	done
-	
-	systemctl daemon-reload
-	systemctl enable podman-auto-update.service
 }
 
 ##### Run Start #####
