@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = boot/Image
+Target = boot/Image.gz
+ 
+[Action]
+When = PostTransaction
+Exec = /usr/bin/sh -c "/usr/bin/cp /boot/Image.gz /boot/vmlinuz-linux"
