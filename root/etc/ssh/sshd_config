@@ -1,0 +1,12 @@
+Port 41094
+PermitRootLogin no
+AuthenticationMethods publickey
+AuthorizedKeysFile      .ssh/authorized_keys
+TCPKeepAlive yes
+ClientAliveInterval 60
+ClientAliveCountMax 10
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+UsePAM yes
+PrintMotd no
+Subsystem       sftp    /usr/lib/ssh/sftp-server

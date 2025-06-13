@@ -1,0 +1,92 @@
+[
+    {
+        "locale.gen": "8eefa09cfa94dfcd5198df75c337793d"
+    },
+    {
+        "pacman-aarch64.conf": "6fedbd09c754843b7ef08de0bdbc4964"
+    },
+    {
+        "pacman-x86_64.conf": "02cec389fe4cca464f7f6511ba228cc7"
+    },
+    {
+        "sudoers": "5034bd3fe39b9acc273bb94ece0b9552"
+    },
+    {
+        "mkinitcpio-aarch64.conf": "be9fa3832a985364e4a8dd34e39987fa"
+    },
+    {
+        "locale.conf": "e24819fd5acc025b5b307b77bb871f65"
+    },
+    {
+        "mkinitcpio-x86_64.conf": "be9fa3832a985364e4a8dd34e39987fa"
+    },
+    {
+        "sysctl.conf": "7cd4cb0dc1504e20bcf83924fff0a984"
+    },
+    {
+        "sshd_config": "62203765be6adb77ae4b242e6367a189"
+    },
+    {
+        "mirrorlist-aarch64": "d027fa32fbfd87cd3ba57fabccddfef0"
+    },
+    {
+        "mirrorlist-x86_64": "79ac018f221495b50870e0a040c9fa70"
+    },
+    {
+        "98-kernel-rename-aarch64.hook": "3cb447ca13056c9d50635d2b3cbb1fde"
+    },
+    {
+        "99-linux-kernel-x86_64.hook": "e52a0b5e8662d57240c2fe7159a9c099"
+    },
+    {
+        "99-linux-kernel-aarch64.hook": "f6d694f8fd2e0557fc6742e972ce6476"
+    },
+    {
+        "editor.sh": "aa1828a80d57377b384249e87da0be25"
+    },
+    {
+        "tcp.conf": "a41776918b837c9b778c6d35d35b4668"
+    },
+    {
+        "netfilter.conf": "6f034a1d190cd9ba928c0c4df2a4aad4"
+    },
+    {
+        "limits.conf": "89c4b52dc8f48983424963640b769025"
+    },
+    {
+        "registries.conf": "dab6baf7f281ab332de1557aad6c1426"
+    },
+    {
+        "containers.conf": "20a8310616b8f59baf2b002b00783d2c"
+    },
+    {
+        "grub-aarch64": "7709392dc200a389d93a0c891924a786"
+    },
+    {
+        "grub-x86_64": "7709392dc200a389d93a0c891924a786"
+    },
+    {
+        "user.conf": "ec896f53cf86f6a87d1b1b5bad92c46b"
+    },
+    {
+        "system.conf": "ed3c54b3e32d212debe92a6e1e9ae47f"
+    },
+    {
+        "journald.conf": "86753b18ff4cffbd1925e74d395a0382"
+    },
+    {
+        "resolved.conf": "f3dc7397c787f653115c7a0996533f16"
+    },
+    {
+        "timesyncd.conf": "d0f964e1dd5546637da1d8ab33cb9458"
+    },
+    {
+        "default.network": "a11d9ce03fbbfd9f0b0600977863faf4"
+    },
+    {
+        ".gitconfig": "66fbe48b1bbef30a8622ce348b9a88b9"
+    },
+    {
+        "ALL_MD5_COMPLETE": true
+    }
+]

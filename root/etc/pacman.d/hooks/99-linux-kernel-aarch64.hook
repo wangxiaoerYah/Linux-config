@@ -1,0 +1,10 @@
+# /etc/pacman.d/hooks/99-linux-kernel.hook
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux-aarch64
+[Action]
+Depends = linux-aarch64
+When = PostTransaction
+Exec = /usr/bin/shutdown -r 10 "10分钟后重启主机"
